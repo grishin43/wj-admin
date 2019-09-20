@@ -1,0 +1,46 @@
+<header class="header">
+    <div class="container-fluid h-100">
+        <div class="row h-100 justify-content-between">
+            <div class="col mwl-sidebar">
+                <div class="d-flex justify-content-between h-100 align-items-center">
+                    <div class="logo_wrapper">
+                        <a href="/" class="logo">
+                            <img src="@/assets/images/logo-white.png" alt="logo" class="logo-all">
+                            <img src="@/assets/images/logo-white-mobile.png" alt="logo" class="logo-mob">
+                        </a>
+                    </div>
+                    <button class="menu-btn menu-btn_dark menu-btn_bars toggle_body-class" @click="toggleSideBar()">
+                    </button>
+                </div>
+            </div>
+            <div class="col-auto mwr-user">
+                <div class="d-flex align-items-center justify-content-between h-100">
+                    <button class="icon-circle-btn" title="Home">
+                        <i class="icomoon icon-home"></i>
+                    </button>
+                    <button class="icon-circle-btn has-notification" title="Notifications">
+                        <i class="icomoon icon-bell"></i>
+                    </button>
+                    <button class="icon-circle-btn" title="Community">
+                        <i class="icomoon icon-team"></i>
+                    </button>
+                    <button class="icon-circle-btn" title="Help">
+                        <i class="icomoon icon-help"></i>
+                    </button>
+                    <button class="user_info-btn" v-click-outside="closeUserCart" @click="toggleUserCart">
+                        <span class="user_info-photo"
+                              :style="{ background: `url(${user_image}) no-repeat center/contain` }">
+                        </span>
+                        <span class="user_info-name">
+                            John Doe
+                        </span>
+                        <i class="icomoon icon-chevrone-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <transition name="fade">
+        <UserActionsCart v-if="user_cart_active"></UserActionsCart>
+    </transition>
+</header>

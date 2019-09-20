@@ -1,8 +1,11 @@
-import Vue from 'vue'
-import App from './App.vue'
+require('./assets/css/style.css');
+require('./assets/css/icomoon.css');
 
-Vue.config.productionTip = false
+import Vue from 'vue';
+import App from './App.vue';
+
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    render: h => h(App),
+}).$mount('#app');

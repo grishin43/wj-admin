@@ -1,0 +1,12 @@
+<div class="sidebar">
+    <div class="sidebar_body">
+        <ul class="sidebar_nav">
+            <li v-for="item in nav">
+                <a v-bind:href="[item.link]">
+                    <i v-bind:class="[item.icon_class]"></i>
+                    {{item.title}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

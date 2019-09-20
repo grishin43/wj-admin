@@ -1,0 +1,28 @@
+<div class="user-actions-cart">
+    <div class="user-actions-cart_header">
+        <h5>Settings and Actions</h5>
+    </div>
+    <div class="user-actions-cart_body">
+        <ul class="menu-list">
+            <li v-for="item in nav">
+                <a v-bind:href="[item.link]">
+                    {{item.title}}
+                </a>
+            </li>
+        </ul>
+        <div class="menu-link bg-dirty_blue">
+            <span class="d-flex align-items-center">
+                <span class="menu-link_image" :style="{ background: `url(${current.image}) no-repeat center/contain` }">
+                </span>
+                {{current.title}}
+            </span>
+        </div>
+    </div>
+    <div class="user-actions-cart_footer">
+        <div v-for="item in actions" class="menu-link">
+            <a v-bind:href="[item.link]">
+                {{item.title}}
+            </a>
+        </div>
+    </div>
+</div>

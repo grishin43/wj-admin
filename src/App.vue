@@ -1,28 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <Header  :sidebar_active="sidebar_active" @changevalue="sidebar_active = $event"></Header>
+        <transition name="fade">
+            <Sidebar v-if="sidebar_active"></Sidebar>
+        </transition>
+        <div class="wja-content"></div>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import Vue from 'vue'
+    import BootstrapVue from 'bootstrap-vue'
+    import 'bootstrap/dist/css/bootstrap.css'
+    import 'bootstrap-vue/dist/bootstrap-vue.css'
+    import Header from './components/header/index.vue'
+    import Sidebar from './components/sidebar/index.vue'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+    Vue.use(BootstrapVue);
+
+    export default {
+        name: 'app',
+        components: {
+            Header,
+            Sidebar
+        },
+        data() {
+            return {
+                Header,
+                sidebar_active: false
+            }
+        }
+    }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
